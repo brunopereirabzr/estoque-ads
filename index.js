@@ -13,15 +13,24 @@ const __dirname = path.dirname(__filename);
 
 /*CONFIGURAÇÃO DA VISÃO*/
 app.engine('handlebars',handlebars.engine({
-    defaultLayout: 'main', 
+    defaultLayout: 'principal', 
     handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname,'public')));
 
+/*ROTAS DO SISTEMA*/
 app.get('/', function(req, res){
-    res.send('Bem vindo ao estoque');
+    var aluno = {
+        nome: "Bruno",
+        nota: 8.5
+    };
+    res.render('admin/index', {aluno});
+})
+
+app.get('/contato', function(req, res){
+    res.render('admin/contato');
 })
 
 app.listen(porta, function(){
