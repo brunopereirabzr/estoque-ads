@@ -51,6 +51,9 @@ app.post('/cadastro', function(req, res){
     }
     res.render('produto/detalhe',{produto});
 })
+
+
+//hahahahahahahhahahahahahah
 app.listen(porta, function(){
     console.log('Servidor truando em http://localhost:'+porta);
 });
