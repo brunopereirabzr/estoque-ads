@@ -53,7 +53,6 @@ app.post('/cadastro', function(req, res){
 })
 
 
-//hahahahahahahhahahahahahah
 app.listen(porta, function(){
     console.log('Servidor truando em http://localhost:'+porta);
 });
