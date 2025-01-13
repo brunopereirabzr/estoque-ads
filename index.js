@@ -41,6 +41,10 @@ app.get('/cadastro', function(req, res){
     res.render('produto/cadastro');
 })
 
+app.get('/produto', function(req, res){
+    res.render('produto/produto');
+})
+
 app.post('/cadastro', function(req, res){
     var produto = {
         descricao: req.body.descricao,
@@ -49,7 +53,7 @@ app.post('/cadastro', function(req, res){
         status: 1,
         foto:'/img/semfoto.png'
     }
-    res.render('produto/detalhe',{produto});
+    res.render('produto/produto',{produto});
 })
 
 
