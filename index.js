@@ -27,11 +27,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 /*ROTAS DO SISTEMA*/
 app.get('/', function(req, res){
-    var aluno = {
-        nome: "Bruno",
-        nota: 8.5
-    };
-    res.render('admin/index', {aluno});
+    res.render('admin/index');
 })
 
 app.get('/contato', function(req, res){
@@ -43,7 +39,21 @@ app.get('/cadastro', function(req, res){
 })
 
 app.get('/produto', function(req, res){
-    res.render('produto/produto');
+    const produtos = [
+        {
+            id: 1,
+            descricao: 'mouse',
+            preco: 25.99,
+            estoque: 10
+        },
+        {
+            id: 2,
+            descricao: 'teclado',
+            preco: 35.99,
+            estoque: 5
+        }
+    ]
+    res.render('produto/lista', {produtos: produtos});
 })
 
 app.post('/cadastro', function(req, res){
@@ -54,10 +64,10 @@ app.post('/cadastro', function(req, res){
         status: 1,
         foto:'/img/semfoto.png'
     }
-    res.render('produto/produto',{produto});
+    res.render('produto/lista',{produto});
 })
 
 
 app.listen(porta, function(){
-    console.log('Servidor truando em http://localhost:'+porta);
+    console.log('Servidor truando em http://localhost:' + porta);
 });

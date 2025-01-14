@@ -5,7 +5,7 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="btn btn-sm btn-primary mx-2" href="/cadastro"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a class="btn btn-sm btn-primary mx-2" href="/cadastro"><i class="fa-solid fa-plus"></i>Novo</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-sm btn-secondary" href="/"><i class="fa-solid fa-angle-left"></i> Voltar</a>
@@ -13,6 +13,30 @@
             </ul>
         </div>
     </nav>
+
+<hr>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>DESCRIÇÃO</th>
+        <th>PRECO</th>
+        <th>ESTOQUE</th>
+    </tr>
+    {{#each produtos}}
+
+        <tr>
+            <td class="col-1">{{id}}</td>
+            <td>{{descricao}}</td>
+            <td>{{preco}}</td>
+            <td>{{estoque}}</td>
+        </tr>
+
+    {{/each}}
+</table>
+
+<hr>
+
 
     <table class="table table-striped">
         <tbody><tr>
