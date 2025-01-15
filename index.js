@@ -1,8 +1,10 @@
 import express from 'express';
+import handlebars from 'express-handlebars';
 const app = express();
+
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import handlebars from 'express-handlebars';
+
 import Handlebars from 'handlebars';
 import bodyParser from 'body-parser';
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access';
@@ -17,7 +19,6 @@ app.engine('handlebars',handlebars.engine({
     defaultLayout: 'principal', 
     handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))
-
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -26,6 +27,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 /*ROTAS DO SISTEMA*/
+
+//Rota inicio
 app.get('/', function(req, res){
     res.render('admin/index');
 })
