@@ -1,14 +1,18 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 const app = express();
+const porta = 3000;
 
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import Handlebars from 'handlebars';
 import bodyParser from 'body-parser';
+
+//colocar isso aqui para poder rodar os dados enviados do banco de dados
+// instale isso no cmd @handlebars/allow-prototype-access --> npm install @handlebars/allow-prototype-access
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access';
-const porta = 3000;
+
 
 //CONFIGURAÇÃO DA PASTA ESTATICA
 const __filename = fileURLToPath(import.meta.url);
@@ -23,7 +27,6 @@ app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
 app.use(express.static(path.join(__dirname,'public')));
 
 /*ROTAS DO SISTEMA*/
@@ -33,7 +36,10 @@ app.get('/', function(req, res){
     res.render('admin/index');
 })
 
-app.get('/contato', function(req, res){
+import produto from './routes/produto.js';
+app.use('/produto', produto);
+
+/*app.get('/contato', function(req, res){
     res.render('admin/contato');
 })
 
@@ -69,7 +75,7 @@ app.post('/cadastro', function(req, res){
     }
     res.render('produto/lista',{produto});
 })
-
+*/
 
 app.listen(porta, function(){
     console.log('Servidor truando em http://localhost:' + porta);
