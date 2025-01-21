@@ -1,9 +1,12 @@
-class ProdutoController{
+import Produto from "../models/Produto.js"
 
-    lista = function(req, res){
-        res.render('produto/lista');
+class ProdutoController{
+   
+    index = async function(req, res){
+        const produtos = await Produto.findAll();
+        res.render('produto/index', {produtos: produtos})
     }
 
-}//Fim da class
+}//fim da classe
 
 export default new ProdutoController()

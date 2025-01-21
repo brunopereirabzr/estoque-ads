@@ -39,44 +39,6 @@ app.get('/', function(req, res){
 import produto from './routes/produto.js';
 app.use('/produto', produto);
 
-/*app.get('/contato', function(req, res){
-    res.render('admin/contato');
-})
-
-app.get('/cadastro', function(req, res){
-    res.render('produto/cadastro');
-})
-
-app.get('/produto', function(req, res){
-    const produtos = [
-        {
-            id: 1,
-            descricao: 'mouse',
-            preco: 25.99,
-            estoque: 10
-        },
-        {
-            id: 2,
-            descricao: 'teclado',
-            preco: 35.99,
-            estoque: 5
-        }
-    ]
-    res.render('produto/lista', {produtos: produtos});
-})
-
-app.post('/cadastro', function(req, res){
-    var produto = {
-        descricao: req.body.descricao,
-        preco: req.body.preco,
-        estoque: req.body.estoque,
-        status: 1,
-        foto:'/img/semfoto.png'
-    }
-    res.render('produto/lista',{produto});
-})
-*/
-
 app.listen(porta, function(){
     console.log('Servidor truando em http://localhost:' + porta);
 });
