@@ -1,3 +1,4 @@
+/*
 import banco from "../config/banco.js";
 
 const Produto = banco.sequelize.define('pessoas', {
@@ -23,3 +24,4 @@ const Produto = banco.sequelize.define('pessoas', {
 
 //Produto.sync()
 export default Pessoa
+*/
