@@ -1,7 +1,6 @@
-/*
 import banco from "../config/banco.js";
 
-const Produto = banco.sequelize.define('pessoas', {
+const Pessoa = banco.sequelize.define('pessoas', {
     id:{
         type:banco.Sequelize.INTEGER,
         primaryKey: true,
@@ -11,17 +10,16 @@ const Produto = banco.sequelize.define('pessoas', {
         type:banco.Sequelize.STRING(100)
     },
     telefone:{
-        type: banco.Sequelize.STRING(200)
+        type: banco.Sequelize.STRING(20)
     },
     email:{
-        type: banco.Sequelize.STRING(100)
+        type: banco.Sequelize.STRING(100), unique: true, allowNull: false
     },
     cpf:{
-        type: banco.Sequelize.STRING(30)
+        type: banco.Sequelize.STRING(20), unique: true, allowNull: false
     }
 
 })
 
-//Produto.sync()
+Pessoa.sync()//Função que gera a tabela pessoa
 export default Pessoa
-*/
