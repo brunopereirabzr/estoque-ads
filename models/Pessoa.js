@@ -21,5 +21,5 @@ const Pessoa = banco.sequelize.define('pessoas', {
 
 })
 
-Pessoa.sync()//Função que gera a tabela pessoa
+//Pessoa.sync()//Função que gera a tabela pessoa
 export default Pessoa
