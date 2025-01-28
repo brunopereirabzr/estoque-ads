@@ -1,6 +1,20 @@
-<h5>Listagem de Pessoas</h5>
+<div class="container-sm">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <h3 class="navbar-brand">Listagem de Pessoas</h3>
 
-<table>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-primary mx-2" href="/pessoa/cadastrar"><i class="fa-solid fa-plus"></i>Novo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-secondary" href="/" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <table class="table table-striped">
     <tr>
         <th>CPF</th>
         <th>NOME</th>
@@ -8,13 +22,19 @@
         <th>TELEFONE</th>
     </tr>
 
-    {{#each pessoas}}
-    <tr>
-        <td>{{cpf}}</td>
-        <td>{{nome}}</td>
-        <td>{{email}}</td>
-        <td>{{telefone}}</td>
-    </tr>
-    {{/each}}
+    
 
-</table>
+
+        
+        {{#each pessoas}}
+            <tr>
+                <td>{{cpf}}</td>
+                <td>{{nome}}</td>
+                <td>{{email}}</td>
+                <td>{{telefone}}</td>
+            </tr>
+        {{/each}}
+
+    </table>
+
+</div>
