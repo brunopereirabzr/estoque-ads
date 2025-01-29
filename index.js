@@ -40,7 +40,10 @@ import produto from './routes/produto.js';
 app.use('/produto', produto);
 
 import pessoa from './routes/pessoa.js';
-app.use('/pessoa', pessoa)
+app.use('/pessoa', pessoa);
+
+import usuario from './routes/usuario.js';
+app.use('/usuario', usuario);
 
 app.listen(porta, function(){
     console.log('Servidor truando em http://localhost:' + porta);
