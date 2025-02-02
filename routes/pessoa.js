@@ -3,7 +3,7 @@ const router = express.Router();
 import PessoaController from '../controllers/PessoaController.js';
 
 router.get('/', PessoaController.index);
-router.get('/cadastrar', PessoaController.cadastrar);
+router.get('/cadastro', PessoaController.cadastro);
 router.post('/salvar', PessoaController.salvar);
 
 export default router;
