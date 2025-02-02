@@ -1,4 +1,5 @@
 import express from 'express';
+import Handlebars from 'handlebars';
 import handlebars from 'express-handlebars';
 const app = express();
 const porta = 8000;
@@ -6,7 +7,7 @@ const porta = 8000;
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-import Handlebars from 'handlebars';
+
 import bodyParser from 'body-parser';
 
 //colocar isso aqui para poder rodar os dados enviados do banco de dados
