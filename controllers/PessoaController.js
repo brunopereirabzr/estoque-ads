@@ -6,7 +6,7 @@ class PessoaController{
         res.render('pessoa/index', {pessoas: pessoas}) // envia as pessoas para a visao
     }
 
-    cadastro = function(req,res){
+    cadastrar = function(req,res){
         res.render('pessoa/cadastro')
     }
 
