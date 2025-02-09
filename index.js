@@ -1,11 +1,17 @@
 import express from 'express';
 import Handlebars from 'handlebars';
 import handlebars from 'express-handlebars';
+
 const app = express();
 const porta = 8000;
 
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+
+//CONFIGURAÇÃO DA PASTA ESTATICA
+const __filename = fileURLToPath(import.meta.url); // Obtem o nome do arquivo atual
+const __dirname = path.dirname(__filename); // Obtem o diretorio do arquivo atual
+
 
 
 import bodyParser from 'body-parser';
@@ -15,11 +21,8 @@ import bodyParser from 'body-parser';
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access';
 
 
-//CONFIGURAÇÃO DA PASTA ESTATICA
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-/*CONFIGURAÇÃO DA VISÃO*/
+/*CONFIGURAÇÃO DA VISÃO*/ // Define o layout padrão para todas as páginas
 app.engine('handlebars',handlebars.engine({
     defaultLayout: 'principal', 
     handlebars: allowInsecurePrototypeAccess(Handlebars)
