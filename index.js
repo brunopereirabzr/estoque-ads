@@ -1,9 +1,26 @@
 import express from 'express';
 import Handlebars from 'handlebars';
 import handlebars from 'express-handlebars';
-
+import session from 'express-session';
+import flash from 'connect-flash';
 const app = express();
 const porta = 8000;
+
+//configuracao de sessao
+app.use(session({
+    secret: 'institutofederaldomaranhao',
+    resave: true,
+    saveUninitialized: false
+}))
+app.use(flash())//permite configurar mensagem --> tem que ser abaixo da sessao
+
+app.use(function(req, res, next){ //
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next()
+})
+
+
 
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';

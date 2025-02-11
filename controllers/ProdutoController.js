@@ -4,8 +4,11 @@ class ProdutoController{
    
     index = async function(req, res){
         const produtos = await Produto.findAll()
+        req.flash('success_msg', 'produto listados!')
         res.render('produto/index', {produtos: produtos})
     }
+
+
 
     cadastrar = function(req,res){
         res.render('produto/cadastrar')

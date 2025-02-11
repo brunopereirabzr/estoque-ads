@@ -7,7 +7,8 @@ class PessoaController{
         let pessoas = await Pessoa.findAll() // await é para o java script esperar a acao buscar todas as pessoas || Pessoa.findAll() cria um lista encadeaada de pessoas do banco
         res.render('pessoa/index', {pessoas: pessoas}) // envia as pessoas para a visao
     }
-    perfil = async function(req, res) {
+    
+    /*perfil = async function(req, res) {
         let id = req.params.id;
         let pessoa = await Pessoa.findByPk(id);
         let usuarios = await Usuario.findAll({
@@ -20,7 +21,7 @@ class PessoaController{
             pessoa: pessoa,
             usuarios: usuarios
         });
-    }
+    }*/
 
     cadastrar = function(req,res){
         res.render('pessoa/cadastro')
