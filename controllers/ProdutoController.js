@@ -8,8 +8,6 @@ class ProdutoController{
         res.render('produto/index', {produtos: produtos})
     }
 
-
-
     cadastrar = function(req,res){
         res.render('produto/cadastrar')
     }

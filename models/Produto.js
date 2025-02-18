@@ -24,5 +24,5 @@ const Produto = banco.sequelize.define('produtos', {
 
 })
 
-//Produto.sync()
+Produto.sync()
 export default Produto
